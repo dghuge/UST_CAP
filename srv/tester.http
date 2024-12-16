@@ -1,0 +1,61 @@
+###Get service document
+http://localhost:4004/odata/v4/PurchaseService
+
+###Get metadata
+http://localhost:4004/odata/v4/PurchaseService/$metadata
+
+###Get all emplopyee data
+http://localhost:4004/odata/v4/PurchaseService/EmployeeSet
+
+###Get single emplopyee data
+http://localhost:4004/odata/v4/PurchaseService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
+
+
+###Get a product data
+http://localhost:4004/odata/v4/PurchaseService/Products/74867AD200E41EDBA5D8B06B26EB4052
+
+###Get a item data
+http://localhost:4004/odata/v4/PurchaseService/Products/74867AD200E41EDBA5D8B06B26EB4052/To_Items
+
+###Get a product and item
+http://localhost:4004/odata/v4/PurchaseService/Products/74867AD200E41EDBA5D8B06B26EB4052?$expand=To_Items
+
+###Get PO data
+http://localhost:4004/odata/v4/PurchaseService/POs
+
+###Get a PO data
+http://localhost:4004/odata/v4/PurchaseService/POs/74867AD200E41EDBA5D8B0C98DC28052
+
+###Boost PO
+POST http://localhost:4004/odata/v4/PurchaseService/POs/74867AD200E41EDBA5D8B0C98DC28052/PurchaseService.boost
+Content-Type: application/json
+
+{
+
+}
+
+###Get largest PO
+http://localhost:4004/odata/v4/PurchaseService/largestOrder()
+
+
+###Get 1 emplopyee data
+http://localhost:4004/odata/v4/PurchaseService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
+
+
+###update emplopyee salary
+PATCH http://localhost:4004/odata/v4/PurchaseService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
+Content-Type: application/json
+
+{
+    "salaryAmount" : 1000000
+}
+
+###Get BP data
+http://localhost:4004/odata/v4/PurchaseService/BusinessPartner
+
+
+###Get all emplopyee data v2
+http://localhost:4004/odata/v2/PurchaseService/EmployeeSet
+
+###Get single emplopyee data v2
+http://localhost:4004/odata/v2/PurchaseService/EmployeeSet/02BD2137-0890-1EEA-A6C2-BB55C197E7FB
