@@ -64,7 +64,7 @@ module.exports = cds.service.impl( async function (srv) {
         const emps = await cds.tx(req).run(req.query);
         if (req.data.ID == null){
             emps.forEach(emp => {
-                if(emp.bankName = "My Bank of Antioch"){
+                if(emp.bankName == "My Bank of Antioch"){
                     emp.salaryAmount += 20000;
                 }
             });
