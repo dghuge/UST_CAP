@@ -1,10 +1,13 @@
 using { ust.mycapapp.db.master, ust.mycapapp.db.transaction } from '../db/datamodel';
 using { ust.mycapapp.db.CDSViews } from '../db/CDSView';
 
-service  PurchaseService @(path:'PurchaseService') {
+service  PurchaseService @(path:'PurchaseService', requires: 'authenticated-user') {
 
     //@readonly
-    entity EmployeeSet as projection on master.employees;
+    entity EmployeeSet @(restrict:[
+            { grant : ['READ'], to : 'Viewer', where : 'bankName = $user.BankName' },
+            { grant : ['WRITE'], to : 'Admin' }
+        ]) as projection on master.employees;
     entity BusinessPartner as projection on master.businesspartner;
     entity BusinessAddressSet as projection on master.address;
     entity ProductSet as projection on master.product;
