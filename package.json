@@ -8,7 +8,8 @@
   "dependencies": {
     "@cap-js-community/odata-v2-adapter": "^1.13.8",
     "@sap/cds": "^8",
-    "express": "^4"
+    "express": "^4",
+    "@cap-js/hana": "^1"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.7.0",
@@ -21,5 +22,10 @@
   },
   "sapux": [
     "app/purchaseorderapp"
-  ]
+  ],
+  "cds": {
+    "sql": {
+      "native_hana_associations": false
+    }
+  }
 }
