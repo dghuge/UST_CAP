@@ -1,2 +1,13 @@
 test git
 git change in BAS
+
+mocked xsuaa
+    "requires": {
+      "db" : "hana",
+      "auth": {
+        "kind": "mocked",
+        "users": {
+          "John":{"roles": ["Viewer"], "attr": {"BankName":"My Bank of London"} }
+        }
+      }
+    }
